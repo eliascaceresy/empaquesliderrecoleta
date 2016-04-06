@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row center-block">
+		<div class=" center-block formborder animated flipInX">
+		
+				<h1><i class="fa fa-star" ></i>Bienvenid@ <%=current_user.name%> a Empaques Tottus El Bosque</h1>
+			
+		</div>
+		
+	</div>
+</div>
+<%t = Time.zone.today.month.to_i %>
+<%if current_user.mescumpleaños == t %>
+	<div class="container">
+		<div class="row center-block">
+			<div class="center-block formborder animated flipInX" style="margin-top:0px;">
+				
+					<h2> <%=current_user.name%> este mes estás de cumpleaños, pide tu beneficio!!!    <i class="fa fa-birthday-cake"></i></h2>
+
+				
+			</div>
+		</div>
+	</div>
+<%end%>

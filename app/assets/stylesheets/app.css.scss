@@ -1,0 +1,274 @@
+@import "bootstrap";
+
+.navbar{
+	border-radius: 0px;
+}
+.logo{
+	color: white !important;
+}
+
+.no-float{
+	float:none;
+
+}
+.ui-datepicker table {
+    width: 100%;
+    font-size: 0.9em;
+    border-collapse: collapse;
+    margin: 0px 0px 0.4em !important;
+}
+.formborder{
+    margin-bottom: 10em;
+    margin-top: 10em;
+    max-width: 80em;
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    -moz-box-shadow:    0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    box-shadow:         0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    border-radius: 2%;
+  }
+
+  .formborder2{
+    margin-bottom: 10em;
+    margin-top: 10em;
+    max-width: 40em;
+    border-radius: 6%;
+  }
+
+ #resplandorblanco{   
+      -moz-box-shadow: 0px 0px 100px #ffffff;
+      -webkit-box-shadow: 0px 0px 100px #ffffff;
+      box-shadow: 0px 0px 100px #ffffff;
+   }
+
+#resplandorverde{
+  -moz-box-shadow: 0px 0px 10px #00FF00;
+      -webkit-box-shadow: 0px 0px 10px #00FF00;
+      box-shadow: 0px 0px 10px #00FF00;
+}
+
+    #resplandorazul{   
+      -moz-box-shadow: 0px 0px 10px #0000D1;
+      -webkit-box-shadow: 0px 0px 10px #0000D1;
+      box-shadow: 0px 0px 10px #0000D1;
+   }
+
+.formborderApartment{
+    margin-bottom: 10em;
+    margin-top: 10em;
+    max-width: 65em;
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    -moz-box-shadow:    0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    box-shadow:         0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    border-radius: 1%;
+  }
+.formborderCategory{
+    margin-bottom: 5em;
+    margin-top: 5em;
+    max-width: 40em;
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    -moz-box-shadow:    0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    box-shadow:         0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    border-radius: 2%;
+  }
+  .formborderUser{
+    margin-bottom: 20em;
+    margin-top: 5em;
+    max-width: 100em;
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    -moz-box-shadow:    0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    box-shadow:         0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    border-radius: 2%;
+  }
+
+.white{
+  color: white !important
+}
+.carousel{
+    position:relative;
+    background: white;
+    margin-top: 20px;
+    max-height: 500px;
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+}
+#carousel-arrows{
+  background-color: transparent !important ;
+}
+.apartment-height{
+  height: 150px;
+}
+.background-cover{
+background-position: center !important;
+ background-size: cover !important;
+}
+.relative{
+    position:relative;
+}
+.absolute{
+   position:absolute;
+}
+.rounded { 
+ border-radius: 20px;
+ overflow:hidden;
+}
+.margin-sup{
+  margin-top: 3px;
+}
+.apartment-carousel {
+  position: relative;
+  width: 740px;
+  height: 492px !important;
+  overflow: hidden;
+}
+.apartment-carousel img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+.apartment-carousel img.portrait {
+  width: 100%;
+  height: auto;
+}
+.crop {
+    width: 380;
+    height: 240 ;
+    overflow: hidden ;
+}
+.crop img {
+    width: 380px ;
+    height: 240px ;
+    margin: 0px 0 0 0px ;
+}
+.cropApartmentShow {
+  min-height: 100px;
+    max-height: 500px ;
+    overflow: hidden ;
+}
+.cropApartmentShow img {
+    width: auto ;
+    height: auto;
+    margin: 0px 0 0 0px ;
+}
+.ui-spinner-input{
+  border: medium none !important;
+  background: transparent none repeat scroll 0% 0% !important;
+  color: inherit !important;
+  padding: 0px !important;
+  margin: 0.2em 22px 0.2em 0.4em !important;
+  vertical-align: middle !important; 
+}
+.input-group a:hover{
+  background-color: #FF6F00 !important;
+}
+.sm-footer-nav a:hover{
+  color: #FF6F00 !important;
+  background-color: white !important;
+}
+.boton a:hover{
+background-color: #FF6F00;
+color: white;
+}
+.thumbnail {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+.thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+.thumbnail img.portrait {
+  width: 100%;
+  height: auto;
+}
+.form_title h1{
+text-align: center;
+box-sizing: border-box;
+color: #4C565E;
+font-size: 24px;
+padding: 0px 0px 12px;
+margin-left: 0;
+margin-right: 0;
+border-bottom: 2px solid #6CAEE0;
+}
+.navbar-default .navbar-toggle{
+  border-color: #009CFF !important;
+}
+
+.icon-bar{
+  background: rgb(8, 159, 255) none repeat scroll 0% 0% !important;
+}
+
+.btn-info{
+  background-color: blue !important;
+  border-color: blue !important;
+  border-radius: 7px;
+}
+.boton-border{
+-webkit-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    -moz-box-shadow:    0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    box-shadow:         0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+}
+
+
+.center-block{
+  text-align: center;
+}
+.center-vertical{
+  margin-top:200px;
+}
+.boton2{
+  width: 60px !important;
+}
+
+.text-center-blue{
+  text-align: center;
+  color: blue;
+}
+
+#ampliar img{
+-webkit-transform:scale(0.1); /*Webkit: Scale down image to 0.8x original size*/
+-moz-transform:scale(0.1); /*Mozilla scale version*/
+-o-transform:scale(0.1); /*Opera scale version*/
+-webkit-transition-duration: 0.5s; /*Webkit: Animation duration*/
+-moz-transition-duration: 0.5s; /*Mozilla duration version*/
+-o-transition-duration: 0.5s; /*Opera duration version*/
+opacity: 0.5;
+}
+/* al pasar el cursor por encima SE AMPLIA*/
+#ampliar img:hover{
+-webkit-transform:scale(0.4); /*Webkit:Modificamos tamaño a escala*/
+-moz-transform:scale(0.4); /*Mozilla:Modificamos tamaño a escala*/
+-o-transform:scale(0.4); /*Opera:Modificamos tamaño a escala*/
+-webkit-transition-duration: 0.5s; /*Webkit:Duración de la animación*/
+-moz-transition-duration: 0.5s; /*Mozilla:Duración de la animació*/
+-o-transition-duration: 0.5s; /*Opera:Duración de la animació*/
+opacity: 1;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+  color:white;
+  text-align: right;
+}
+
+.dropdown-menu > li > a{
+  color:black;
+  text-align: right;
+  background-color: white;
+}
+ .container{
+  width: 100%;
+ }

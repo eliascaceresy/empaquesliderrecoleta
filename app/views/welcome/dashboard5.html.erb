@@ -1,0 +1,119 @@
+<div class="container well formborderUser">
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form_title">
+        <h1>
+          <i class="fa fa-calendar-check-o"></i> Administrar Toma de Turnos
+        </h1>
+      </div>
+      <%unless @tomaturnos.empty?%>
+        <div class="table-responsive">
+          <table class="table">
+          <tbody>
+            <% @tomaturnos.each do |tomaturno| %>
+              <tr>
+                <td><h3>Toma de Turnos: </h3></td>
+                <td><h3 style="margin-left:10px"><%= tomaturno.state %></h3></td>
+                <% if tomaturno.may_activartoma?%>
+                  <td><%= link_to 'Activar', "/tomaturnos/#{tomaturno.id}/activartoma", method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-success",style:"margin-left:20px;" %></td>
+                <%else%>
+                  <td><%= link_to 'Desactivar', "/tomaturnos/#{tomaturno.id}/desactivartoma", method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-danger",style:"margin-left:20px;" %></td>
+                <%end%>
+              </tr>
+              <tr>
+                <td><h3>Turnos por Empaque:</h3></td> 
+                <td><h3><%=tomaturno.canmaxsemana%></h3></td> 
+                <td><h3><%= link_to 'Cambiar',edit_tomaturno_path(tomaturno),class:"btn btn-warning"%></h3></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        </div>
+      <%end%>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form_title">
+        <h1>
+          <i class="fa fa-users"></i>Listado de Grupos 
+        </h1>
+      </div>
+      <%unless @groups.empty?%>
+        <div class="table-responsive">
+          <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Estado</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @groups.each do |group| %>
+              <tr>
+                <td><h3><%= group.name %></h3></td>
+                <td><h3 style="margin-left:10px"><%= group.state %></h3></td>
+                <td><%= link_to 'Editar', edit_group_path(group),class:"btn btn-warning", style:"margin-left:10px" %></td>
+                <% if group.may_activate?%>
+                  <td><%= link_to 'Activar', "/groups/#{group.id}/activate", method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-success" %></td>
+                <%else%>
+                  <td><%= link_to 'Desactivar', "/groups/#{group.id}/inactivate", method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-info" %></td>
+                <%end%>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        </div>
+      <%end%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="form_title">
+        <h1><i class="fa fa-calendar-check-o"></i> Agregar Turnos</h1>
+      </div>
+      <div class="container">
+        <div class="row-fluid">
+          <div class="col-md-6">
+            <%=form_tag import_turns_path, multipart: true do%>
+              <div class="row-fluid">
+                <div class="col-md-6">
+                  <%= file_field_tag :file,class:"btn btn-info"%>
+                </div>
+                <div class="col-md-6">
+                  <%=submit_tag "Importar", class:"btn btn-success",style:"margin:3px;"%>
+                </div>
+              </div>
+            <%end%>
+          </div>
+          <div class="col-md-6">
+            <div style="text-align:center">
+              <%= link_to 'Nuevo Turno',new_turn_path,class:"btn btn-success"%>
+              <%= link_to 'Eliminar Turnos',"/turn/borrarturnos", method: :delete, data: { confirm: 'Estás seguro?' },class:"btn btn-danger" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 center-block no-float">
+      <div class="table-responsive">
+      <table class="table">
+      <tbody>
+        <tr>
+          <td><b>Dia</b></td>
+          <td><b>Hora de Inicio</b></td>
+          <td><b>Hora de Termino</b></td>
+        </tr>
+        <% @turns.each do |turn| %>
+        <tr>
+          <td><%= turn.dia%> <%=turn.numdia%></td>
+          <td><%= turn.horainicio %></td>
+          <td><%= turn.horatermino %></td>
+          
+        </tr>
+        <% end %>
+      </tbody>
+      </table>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

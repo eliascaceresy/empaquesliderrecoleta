@@ -1,0 +1,182 @@
+
+<% if Tomaturno.find(1).may_activartoma? %>
+  <div class="container">
+    <div class="row center-block">
+      <div class="center-vertical formborder animated flipInX">
+        <div class="container ">
+          <h1>La Toma de Turnos no está activa</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+<%else%>
+  <%if Group.find(current_user.group_id).may_activate?%>
+    <div class="container">
+      <div class="row center-block">
+        <div class="center-vertical formborder animated flipInX">
+          <div class="container ">
+            <h1>Tu Grupo no puede tomar Turnos</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%else%>
+    <%if current_user.may_activar? %>
+      <div class="container">
+        <div class="row center-block">
+          <div class="center-vertical formborder animated flipInX">
+            <div class="container ">
+              <h1><%=current_user.name%> estás bloqueado para tomar turnos</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%else%>
+      <div class="container well formborderUser">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form_title">
+              <h1><i class="fa fa-calendar"></i>Turnos Disponibles</h1>
+            </div>
+            <%if current_user.turns.count >= Tomaturno.find(1).canmaxsemana%>
+              <div class="container">
+                <div class="row center-block">
+                  <div class="center-vertical formborder animated flipInX">
+                    <div class="container ">
+                      <h1><%=current_user.name%> ya tomaste todos tus Turnos</h1>
+                    </div>
+                  </div>
+              </div>
+              </div>
+            <%else%>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                   <tr>
+                    <th class="formborder text-center-blue" id="resplandorazul">Lunes <%=Turn.find_by(dia:'Lunes').numdia%></th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Martes <%=Turn.find_by(dia:'Martes').numdia%></th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Miercoles <%=Turn.find_by(dia:'Miercoles').numdia%></th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Jueves <%=Turn.find_by(dia:'Jueves').numdia%></th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Viernes <%=Turn.find_by(dia:'Viernes').numdia%></th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Sábado <%=Turn.find_by(dia:'Sábado').numdia%></th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Domingo <%=Turn.find_by(dia:'Domingo').numdia%></th>
+                    </tr>
+                  </thead>            
+                  <tbody>
+                   <td>
+                    <%if current_user.turns.lunes.count<2%>
+                      <% @turns.lunes.libres.each do |turn|%>
+                        <div style="margin:5px;">
+                          <%= link_to turn.horainicio+" - "+turn.horatermino, "/turns/#{turn.id}/tomarturno", method: :put,class:"btn btn-success" %>
+                        </div>
+                      <%end%>
+                    <%else%>
+                      <div class="alert alert-dismissible alert-success animate slideOutDown">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <h6 class="alert-link">Ya has tomado</h6> 
+                        <h6 class="alert-link">2 Turnos el Lunes</h6>
+                      </div>
+                    <%end%>
+                   </td>
+                   <td>
+                    <%if current_user.turns.martes.count<2%>
+                      <% @turns.martes.libres.each do |turn|%>
+                        <div style="margin:5px;">
+                          <%= link_to turn.horainicio+" - "+turn.horatermino, "/turns/#{turn.id}/tomarturno", method: :put,class:"btn btn-success" %>
+                        </div>
+                      <%end%>
+                    <%else%>
+                      <div class="alert alert-dismissible alert-success animate slideOutDown">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <h6 class="alert-link">Ya has tomado</h6> 
+                        <h6 class="alert-link">2 Turnos el Martes</h6>
+                      </div>
+                    <%end%>
+                  </td>
+                  <td>
+                    <%if current_user.turns.miercoles.count<2%>
+                      <% @turns.miercoles.libres.each do |turn|%>
+                        <div style="margin:5px;">
+                          <%= link_to turn.horainicio+" - "+turn.horatermino, "/turns/#{turn.id}/tomarturno", method: :put,class:"btn btn-success" %>
+                        </div>
+                      <%end%>
+                    <%else%>
+                      <div class="alert alert-dismissible alert-success animate slideOutDown">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <h6 class="alert-link">Ya has tomado</h6> 
+                        <h6 class="alert-link">2 Turnos el Miércoles</h6>
+                      </div>
+                    <%end%>
+                  </td>
+                  <td>
+                    <%if current_user.turns.jueves.count<2%>
+                      <% @turns.jueves.libres.each do |turn|%>
+                        <div style="margin:5px;">
+                          <%= link_to turn.horainicio+" - "+turn.horatermino, "/turns/#{turn.id}/tomarturno", method: :put,class:"btn btn-success" %>
+                        </div>
+                      <%end%>
+                    <%else%>
+                      <div class="alert alert-dismissible alert-success animate slideOutDown">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <h6 class="alert-link">Ya has tomado</h6> 
+                        <h6 class="alert-link">2 Turnos el Jueves</h6>
+                      </div>
+                    <%end%>
+                  </td>
+                  <td>
+                    <%if current_user.turns.viernes.count<2%>
+                      <% @turns.viernes.libres.each do |turn|%>
+                        <div style="margin:5px;">
+                          <%= link_to turn.horainicio+" - "+turn.horatermino, "/turns/#{turn.id}/tomarturno", method: :put,class:"btn btn-success" %>
+                        </div>
+                      <%end%>
+                    <%else%>
+                      <div class="alert alert-dismissible alert-success animate slideOutDown">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <h6 class="alert-link">Ya has tomado</h6> 
+                        <h6 class="alert-link">2 Turnos el Viernes</h6>
+                      </div>
+                    <%end%>
+                  </td>
+                  <td>
+                    <%if current_user.turns.sabado.count<2%>
+                      <% @turns.sabado.libres.each do |turn|%>
+                        <div style="margin:5px;">
+                          <%= link_to turn.horainicio+" - "+turn.horatermino, "/turns/#{turn.id}/tomarturno", method: :put,class:"btn btn-success" %>
+                        </div>
+                      <%end%>
+                    <%else%>
+                      <div class="alert alert-dismissible alert-success animate slideOutDown">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <h6 class="alert-link">Ya has tomado</h6> 
+                        <h6 class="alert-link">2 Turnos el Sábado</h6>
+                      </div>
+                    <%end%>
+                  </td>
+                  <td>
+                    <%if current_user.turns.domingo.count<2%>
+                      <% @turns.domingo.libres.each do |turn|%>
+                        <div style="margin:5px;">
+                          <%= link_to turn.horainicio+" - "+turn.horatermino, "/turns/#{turn.id}/tomarturno", method: :put,class:"btn btn-success" %>
+                        </div>
+                      <%end%>
+                    <%else%>
+                      <div class="alert alert-dismissible alert-success animate slideOutDown">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <h6 class="alert-link">Ya has tomado</h6> 
+                        <h6 class="alert-link">2 Turnos el Domingo</h6>
+                      </div>
+                    <%end%>
+                  </td>
+                </tbody>
+              </table>
+            </div>
+          <%end%>
+
+          </div> 
+        </div>
+      </div>
+    <%end%>
+  <%end%>
+<%end%>
+

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container well formborderCategory">
+  <div class="row">
+  <div class="form_title">
+    <h1><i class="fa fa-users"></i>Listado de Grupos</h1>
+  </div>
+<%unless @groups.empty?%>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+<%end%>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><h2><%= group.name %></h2></td>
+        <td><h2 style="margin-left:10px"><%= group.state %></h2></td>
+        <td><%= link_to 'Editar', edit_group_path(group),class:"btn btn-warning", style:"margin-left:10px" %></td>
+        <td><%= link_to 'Eliminar', group, method: :delete, data: { confirm: 'Estás seguro?' },class:"btn btn-danger" %></td>
+        <% if group.may_activate?%>
+        <td><%= link_to 'Activar', "/groups/#{group.id}/activate", method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-success" %></td>
+        <%else%>
+        <td><%= link_to 'Desactivar', "/groups/#{group.id}/inactivate", method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-info" %></td>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Grupo', new_group_path, class:"btn btn-success",style:"color:white" %>
+</div>
+  </div>
+</div>

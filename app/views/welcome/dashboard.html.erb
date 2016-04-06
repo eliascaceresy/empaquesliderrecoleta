@@ -1,0 +1,166 @@
+<div class="container well formborderUser">
+  <div class="row">
+    <div class="form_title">
+      <h1><i class="fa fa-calendar"></i>Mis Turnos</h1>
+    </div>
+    <div class="col-md-12 center-block no-float">
+      <div class="table-responsive">
+        <table class="table">
+            <thead>
+              <tr>
+                <th class="formborder text-center-blue" id="resplandorazul">Lunes <%=Turn.find_by(dia:'Lunes').numdia%></th>
+                <th class="formborder text-center-blue" id="resplandorazul">Martes <%=Turn.find_by(dia:'Martes').numdia%></th>
+                <th class="formborder text-center-blue" id="resplandorazul">Miercoles <%=Turn.find_by(dia:'Miercoles').numdia%></th>
+                <th class="formborder text-center-blue" id="resplandorazul">Jueves <%=Turn.find_by(dia:'Jueves').numdia%></th>
+                <th class="formborder text-center-blue" id="resplandorazul">Viernes <%=Turn.find_by(dia:'Viernes').numdia%></th>
+                <th class="formborder text-center-blue" id="resplandorazul">Sábado <%=Turn.find_by(dia:'Sábado').numdia%></th>
+                <th class="formborder text-center-blue" id="resplandorazul">Domingo <%=Turn.find_by(dia:'Domingo').numdia%></th>
+              </tr>
+            </thead>            
+            <tbody>
+              <td>
+                <% current_user.turns.lunes.each do |turn|%>
+                  <% if @tomaturnos.find(1).may_desactivartoma? %>
+                    <%if Group.find(current_user.group_id).may_inactivate?%>
+                      <div style="margin:5px;">
+                        <%= link_to turn.horainicio+" - "+turn.horatermino,"/turns/#{turn.id}/liberarturno",method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-danger" %>
+                      </div>
+                    <%else%>
+                      <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                        <%= turn.horainicio+" - "+turn.horatermino%>
+                      </div>
+                    <%end%>
+                  <%else%>
+                    <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                      <%= turn.horainicio+" - "+turn.horatermino%>
+                    </div>
+                    <br>
+                  <%end%>
+                <%end%>
+              </td>
+              <td>
+                <% current_user.turns.martes.each do |turn|%>
+                  <% if @tomaturnos.find(1).may_desactivartoma? %>
+                    <%if Group.find(current_user.group_id).may_inactivate?%>
+                      <div style="margin:5px;">
+                        <%= link_to turn.horainicio+" - "+turn.horatermino,"/turns/#{turn.id}/liberarturno",method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-danger" %>
+                      </div>
+                    <%else%>
+                      <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                        <%= turn.horainicio+" - "+turn.horatermino%>
+                      </div>
+                    <%end%>
+                  <%else%>
+                    <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                      <%= turn.horainicio+" - "+turn.horatermino%>
+                    </div>
+                    <br>
+                  <%end%>
+                <%end%>
+              </td>
+              <td>
+                <% current_user.turns.miercoles.each do |turn|%>
+                  <% if @tomaturnos.find(1).may_desactivartoma? %>
+                    <%if Group.find(current_user.group_id).may_inactivate?%>
+                      <div style="margin:5px;">
+                        <%= link_to turn.horainicio+" - "+turn.horatermino,"/turns/#{turn.id}/liberarturno",method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-danger" %>
+                      </div>
+                    <%else%>
+                      <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                        <%= turn.horainicio+" - "+turn.horatermino%>
+                      </div>
+                    <%end%>
+                  <%else%>
+                    <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                      <%= turn.horainicio+" - "+turn.horatermino%>
+                    </div>
+                    <br>
+                  <%end%>
+                <%end%>
+              </td>
+              <td>
+                <% current_user.turns.jueves.each do |turn|%>
+                  <% if @tomaturnos.find(1).may_desactivartoma? %>
+                    <%if Group.find(current_user.group_id).may_inactivate?%>
+                      <div style="margin:5px;">
+                        <%= link_to turn.horainicio+" - "+turn.horatermino,"/turns/#{turn.id}/liberarturno",method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-danger" %>
+                      </div>
+                    <%else%>
+                      <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                        <%= turn.horainicio+" - "+turn.horatermino%>
+                      </div>
+                    <%end%>
+                  <%else%>
+                    <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                      <%= turn.horainicio+" - "+turn.horatermino%>
+                    </div>
+                    <br>
+                  <%end%>
+                <%end%>
+              </td>
+              <td>
+                <% current_user.turns.viernes.each do |turn|%>
+                  <% if @tomaturnos.find(1).may_desactivartoma? %>
+                    <%if Group.find(current_user.group_id).may_inactivate?%>
+                      <div style="margin:5px;">
+                        <%= link_to turn.horainicio+" - "+turn.horatermino,"/turns/#{turn.id}/liberarturno",method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-danger" %>
+                      </div>
+                    <%else%>
+                      <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                        <%= turn.horainicio+" - "+turn.horatermino%>
+                      </div>
+                    <%end%>
+                  <%else%>
+                    <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                      <%= turn.horainicio+" - "+turn.horatermino%>
+                    </div>
+                    <br>
+                  <%end%>
+                <%end%>
+              </td>
+              <td>
+                <% current_user.turns.sabado.each do |turn|%>
+                  <% if @tomaturnos.find(1).may_desactivartoma? %>
+                    <%if Group.find(current_user.group_id).may_inactivate?%>
+                      <div style="margin:5px;">
+                        <%= link_to turn.horainicio+" - "+turn.horatermino,"/turns/#{turn.id}/liberarturno",method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-danger" %>
+                      </div>
+                    <%else%>
+                      <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                        <%= turn.horainicio+" - "+turn.horatermino%>
+                      </div>
+                    <%end%>
+                  <%else%>
+                    <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                      <%= turn.horainicio+" - "+turn.horatermino%>
+                    </div>
+                    <br>
+                  <%end%>
+                <%end%>
+              </td>
+              <td>
+                <% current_user.turns.domingo.each do |turn|%>
+                  <% if @tomaturnos.find(1).may_desactivartoma? %>
+                    <%if Group.find(current_user.group_id).may_inactivate?%>
+                      <div style="margin:5px;">
+                        <%= link_to turn.horainicio+" - "+turn.horatermino,"/turns/#{turn.id}/liberarturno",method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-danger" %>
+                      </div>
+                    <%else%>
+                      <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                        <%= turn.horainicio+" - "+turn.horatermino%>
+                      </div>
+                    <%end%>
+                  <%else%>
+                    <div class="btn btn-success" id="resplandorverde" style="margin:5px;">
+                      <%= turn.horainicio+" - "+turn.horatermino%>
+                    </div>
+                    <br>
+                  <%end%>
+                <%end%>
+              </td>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

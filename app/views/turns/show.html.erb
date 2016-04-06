@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @turn.dia %>
+</p>
+
+<p>
+  <strong>Horainicio:</strong>
+  <%= @turn.horainicio %>
+</p>
+
+<p>
+  <strong>Horatermino:</strong>
+  <%= @turn.horatermino %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @turn.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_turn_path(@turn) %> |
+<%= link_to 'Back', turns_path %>

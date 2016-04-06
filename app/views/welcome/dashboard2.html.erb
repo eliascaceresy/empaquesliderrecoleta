@@ -1,0 +1,32 @@
+<div class="container well formborderUser">
+    <div class="row">
+    <div class="form_title">
+        <h1><i class="fa fa-calendar"></i>Turnos Tomados</h1>
+        <%=link_to "EXPORTAR A EXCEL",turns_path(format: "xls"),class:"btn btn-warning"%>
+      </div>
+<div class="col-md-12 center-block no-float">
+      <div class="table-responsive">
+      <table class="table">
+      <tbody>
+        <tr>
+          <td><b>Dia</b></td>
+          <td><b>Hora de Inicio</b></td>
+          <td><b>Hora de Termino</b></td>
+          <td><b>Empaque</b></td>
+        </tr>
+        <% @turns.each do |turn| %>
+        <tr>
+          <td><%= turn.dia%> <%=turn.numdia%></td>
+          <td><%= turn.horainicio %></td>
+          <td><%= turn.horatermino %></td>
+          <td><%= User.find(turn.user_id).name %></td>
+          <td><%= link_to "ELIMINAR","/turns/#{turn.id}/liberarturno",method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-danger" %></td>
+          
+        </tr>
+        <% end %>
+      </tbody>
+      </table>
+      </div>
+      </div>
+    </div>
+</div>

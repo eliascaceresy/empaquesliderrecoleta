@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: MyString
+  horain: MyString
+  horater: MyString
+  state: MyString
+
+two:
+  day: MyString
+  horain: MyString
+  horater: MyString
+  state: MyString

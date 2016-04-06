@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="container well formborderCategory">
+        <div class="row">
+          <div class="form_title">
+            <h1><i class="fa fa-calendar-check-o"></i>
+                Administrar Toma de Turnos
+            </h1>
+          </div>
+          <%unless @tomaturnos.empty?%>
+            <table>
+          <%end%>
+          <tbody>
+            <% @tomaturnos.each do |tomaturno| %>
+              <tr>
+                <td><h2>Toma de Turnos: </h2></td>
+                <td><h2 style="margin-left:10px"><%= tomaturno.state %></h2></td>
+                <% if tomaturno.may_activartoma?%>
+                  <td><%= link_to 'Activar', "/tomaturnos/#{tomaturno.id}/activartoma", method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-success",style:"margin-left:20px;" %></td>
+                <%else%>
+                  <td><%= link_to 'Desactivar', "/tomaturnos/#{tomaturno.id}/desactivartoma", method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-danger",style:"margin-left:20px;" %></td>
+                <%end%>
+              </tr>
+              <div>
+                <h2>Turnos por Empaque: <%=tomaturno.canmaxsemana%> <%= link_to 'Cambiar',edit_tomaturno_path(tomaturno),class:"btn btn-warning"%></h2>
+              </div>
+            <% end %>
+          </tbody>
+        </table>
+      
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,57 @@
+<div class="container well formborderUser">
+    <div class="row">
+      <div class="form_title">
+        <h1><i class="fa fa-users"></i>Listado de Empaques</h1>
+        <h3>Importar Empaques</h3>
+        <div class="container">
+          <div class="row">
+            <%=form_tag import_users_path, multipart: true do%>
+              <div class="col-md-3">
+                <div><%= file_field_tag :file, class:"btn btn-warning" %></div>
+              </div>
+              <div class="col-md-6">
+                <div><%=submit_tag "Importar", class:"btn btn-success",style:"margin:3px;"%> </div> 
+              </div>
+            <%end%>
+          </div> 
+      </div>
+      <div class="col-md-12 center-block no-float">
+      <div class="table-responsive">
+      <table class="table">
+      <tbody>
+        <tr>
+          <td><b>Numero</b></td>
+          <td><b>Nombre</b></td>
+          <td><b>RUT</b></td>
+          <td><b>Email</b></td>
+          <td><b>Teléfono</b></td>
+          <td><b>Gupo</b></td>
+          <td><b>Estado</b></td>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <%t = Time.zone.today.month.to_i %>
+          <td><%if user.mescumpleaños == t %><i class="fa fa-birthday-cake"></i><%end%>  <%=link_to user.name,"/Perfil/#{user.id}"%></td>
+          <td><%= user.rut %></td>
+          <td><%= user.email %></td>
+          <td><%= user.phone_number %></td>
+          <td><%= user.group_id %></td>
+          <td><%= user.state %></td>
+
+            <% if user.may_activar?%>
+        <td><%= link_to 'Activar', "/users/#{user.id}/activar", method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-success" %></td>
+        <%else%>
+        <td><%= link_to 'Desactivar', "/users/#{user.id}/desactivar", method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-info" %></td>
+        <%end%>
+          </td>
+          
+        </tr>
+        <% end %>
+      </tbody>
+      </table>
+      </div>
+      <%= will_paginate @users,renderer: BootstrapPagination::Rails %>
+      </div>
+    </div>
+</div>

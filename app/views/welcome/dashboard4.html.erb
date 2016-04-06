@@ -1,0 +1,23 @@
+<div class="container well formborderUser">
+  <div class="form_title">
+    <h1><i class="fa fa-user"></i> Datos Empaque N°<%=@users.id%> </h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div style="text-align:center;">
+        <%=image_tag @users.cover.url(:mini)%>
+      </div>
+      <h2 class="animated rubberBand"><i class="fa fa-user"></i><%= @users.name%> <%= @users.rut%></h2>
+      <h2 class="animated rubberBand"><i class="fa fa-envelope"></i> <%= @users.email%></h2>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <h2 class="animated rubberBand"><i class="fa fa-mobile"></i> <%= @users.phone_number%></h2>
+      <h2 class="animated rubberBand"><i class="fa fa-home"></i> <%= @users.address%></h2>
+      <h2 class="animated rubberBand"><i class="fa fa-users"></i> Grupo <%= @users.group_id%></h2>
+      <h2 class="animated rubberBand"><i class="fa fa-university"></i><%= @users.universidad%></h2>
+      <h2 class="animated rubberBand"><i class="fa fa-graduation-cap"></i> <%= @users.carrera%></h2>
+      <h2 class="animated rubberBand"><i class="fa fa-birthday-cake"></i> <%= @users.diacumpleaños%>/<%= @users.mescumpleaños%></h2>
+    </div>
+  </div>
+  <%= link_to " ",:back,class:"fa fa-arrow-circle-left",style:"font-size:50px;color:blue;" %>
+</div>

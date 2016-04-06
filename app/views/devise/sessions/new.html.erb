@@ -1,0 +1,36 @@
+<div class="container-fluid image-background">
+  <div class="row">
+    <div class="container well formborder2 animated fadeInDown" id="resplandorblanco">
+      <div class="form_title">
+        <h1>Ingresar al Sistema</h1>  
+      </div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name),html: {role: "form"}) do |f| %>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">
+            <span class="fa fa-user"></span>
+          </span>
+          <%= f.text_field :rut, class: "form-control", placeholder:"RUT" %>
+        </div>
+        <div class="input-group input-group-lg" style="margin-top:10px;">
+          <span class="input-group-addon">
+            <span class="fa fa-unlock-alt"></span>
+          </span>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder:"Contraseña" %>
+        </div>
+        <% if devise_mapping.rememberable? -%>
+          <div class="form-group center-block" style="margin-top:10px;">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me,'Recordarme' %>
+          </div>
+        <% end -%>
+        <div class="center-block"> 
+          <div class="actions bn-lg">
+            <%= f.submit "Iniciar Sesión", class: "btn btn-info boton-border " %>
+          </div>
+        <% end %>
+        </div>
+        <%= render "devise/shared/links" %>
+      </div>
+  </div>
+</div>
+
