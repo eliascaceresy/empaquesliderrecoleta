@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
   has_attached_file :cover, styles: {medium: "50X50", mini:"200x300"} 
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
 
+  def email_required?
+    false
+  end
+
 def self.import (file)
   CSV.foreach(file.path, headers: true) do |row|
   	User.create! row.to_hash
