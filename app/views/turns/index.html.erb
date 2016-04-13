@@ -2,7 +2,7 @@
 <% if Tomaturno.find(1).may_activartoma? %>
   <div class="container">
     <div class="row center-block">
-      <div class="center-vertical formborder animated flipInX">
+      <div class="center-vertical center-block formborder animated flipInX">
         <div class="container ">
           <h1>La Toma de Turnos no está activa</h1>
         </div>
@@ -13,7 +13,7 @@
   <%if Group.find(current_user.group_id).may_activate?%>
     <div class="container">
       <div class="row center-block">
-        <div class="center-vertical formborder animated flipInX">
+        <div class="center-vertical center-block formborder animated flipInX">
           <div class="container ">
             <h1>Tu Grupo no puede tomar Turnos</h1>
           </div>
@@ -24,7 +24,7 @@
     <%if current_user.may_activar? %>
       <div class="container">
         <div class="row center-block">
-          <div class="center-vertical formborder animated flipInX">
+          <div class="center-vertical center-block formborder animated flipInX">
             <div class="container ">
               <h1><%=current_user.name%> estás bloqueado para tomar turnos</h1>
             </div>
@@ -41,7 +41,7 @@
             <%if current_user.turns.count >= Tomaturno.find(1).canmaxsemana%>
               <div class="container">
                 <div class="row center-block">
-                  <div class="center-vertical formborder animated flipInX">
+                  <div class="center-vertical center-block formborder animated flipInX">
                     <div class="container ">
                       <h1><%=current_user.name%> ya tomaste todos tus Turnos</h1>
                     </div>

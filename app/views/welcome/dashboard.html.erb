@@ -1,7 +1,8 @@
 <div class="container well formborderUser">
   <div class="row">
     <div class="form_title">
-      <h1><i class="fa fa-calendar"></i>Mis Turnos</h1>
+    <%t = Time.now%>
+      <h1><i class="fa fa-calendar"></i>Mis Turnos  Mes: <%=t.strftime("%B")%> </h1>
     </div>
     <div class="col-md-12 center-block no-float">
       <div class="table-responsive">
