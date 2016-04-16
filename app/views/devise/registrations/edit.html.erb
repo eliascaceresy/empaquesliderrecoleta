@@ -8,12 +8,15 @@
         <%=image_tag @user.cover.url(:mini)%>
       </div>
       <h2 class="animated rubberBand"><i class="fa fa-user"></i><%= current_user.name%> <%= current_user.rut%></h2>
-      <h2 class="animated rubberBand"><i class="fa fa-envelope"></i> <%= current_user.email%></h2>
+      <h2 class="animated rubberBand"><i class="fa fa-mobile"></i> <%= current_user.phone_number%></h2>
+      <%if current_user.group_id==1%>
+        <h2 class="animated rubberBand"><i class="fa fa-male"></i>Soy Empaque</h2>
+      <%else%>
+        <h2 class="animated rubberBand"><i class="fa fa-male"></i>Soy Coordinador</h2>
+      <%end%>
     </div>
     <div class="col-xs-6 col-sm-6 col-md-6">
-      <h2 class="animated rubberBand"><i class="fa fa-mobile"></i> <%= current_user.phone_number%></h2>
       <h2 class="animated rubberBand"><i class="fa fa-home"></i> <%= current_user.address%></h2>
-      <h2 class="animated rubberBand"><i class="fa fa-users"></i> Grupo <%= current_user.group_id%></h2>
       <h2 class="animated rubberBand"><i class="fa fa-university"></i><%= current_user.universidad%></h2>
       <h2 class="animated rubberBand"><i class="fa fa-graduation-cap"></i> <%= current_user.carrera%></h2>
       <h2 class="animated rubberBand"><i class="fa fa-birthday-cake"></i> <%= current_user.diacumpleaños%>/<%= current_user.mescumpleaños%></h2>

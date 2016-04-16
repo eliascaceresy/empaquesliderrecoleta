@@ -1,22 +1,33 @@
 <div class="container well formborderUser">
   <div class="row">
     <div class="form_title">
-    <%t = Time.now%>
-      <h1><i class="fa fa-calendar"></i>Mis Turnos  Mes: <%=t.strftime("%B")%> </h1>
+      <h1><i class="fa fa-calendar"></i>Mis Turnos</h1>
     </div>
     <div class="col-md-12 center-block no-float">
       <div class="table-responsive">
         <table class="table">
             <thead>
-              <tr>
-                <th class="formborder text-center-blue" id="resplandorazul">Lunes <%=Turn.find_by(dia:'Lunes').numdia%></th>
-                <th class="formborder text-center-blue" id="resplandorazul">Martes <%=Turn.find_by(dia:'Martes').numdia%></th>
-                <th class="formborder text-center-blue" id="resplandorazul">Miercoles <%=Turn.find_by(dia:'Miercoles').numdia%></th>
-                <th class="formborder text-center-blue" id="resplandorazul">Jueves <%=Turn.find_by(dia:'Jueves').numdia%></th>
-                <th class="formborder text-center-blue" id="resplandorazul">Viernes <%=Turn.find_by(dia:'Viernes').numdia%></th>
-                <th class="formborder text-center-blue" id="resplandorazul">Sábado <%=Turn.find_by(dia:'Sábado').numdia%></th>
-                <th class="formborder text-center-blue" id="resplandorazul">Domingo <%=Turn.find_by(dia:'Domingo').numdia%></th>
-              </tr>
+              <%if not Turn.count == 0%>
+                 <tr>
+                    <th class="formborder text-center-blue" id="resplandorazul">Lunes <%=Turn.find_by(dia:'Lunes').numdia%></th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Martes <%=Turn.find_by(dia:'Martes').numdia%></th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Miercoles <%=Turn.find_by(dia:'Miercoles').numdia%></th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Jueves <%=Turn.find_by(dia:'Jueves').numdia%></th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Viernes <%=Turn.find_by(dia:'Viernes').numdia%></th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Sábado <%=Turn.find_by(dia:'Sábado').numdia%></th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Domingo <%=Turn.find_by(dia:'Domingo').numdia%></th>
+                  </tr>
+              <%else%>
+                  <tr>
+                    <th class="formborder text-center-blue" id="resplandorazul">Lunes</th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Martes</th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Miercoles</th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Jueves</th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Viernes</th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Sábado</th>
+                    <th class="formborder text-center-blue" id="resplandorazul">Domingo</th>
+                  </tr>
+              <%end%>
             </thead>            
             <tbody>
               <td>
