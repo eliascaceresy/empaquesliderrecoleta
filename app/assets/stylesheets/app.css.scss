@@ -10,6 +10,10 @@
 .no-float{
 	float:none;
 
+.image-fondo{
+	background-image: image-url("background.jpeg");
+}
+
 }
 .ui-datepicker table {
     width: 100%;
@@ -34,7 +38,7 @@
     border-radius: 6%;
   }
 
- #resplandorblanco{   
+ #resplandorblanco{
       -moz-box-shadow: 0px 0px 100px #ffffff;
       -webkit-box-shadow: 0px 0px 100px #ffffff;
       box-shadow: 0px 0px 100px #ffffff;
@@ -46,7 +50,7 @@
       box-shadow: 0px 0px 10px #00FF00;
 }
 
-    #resplandorazul{   
+    #resplandorazul{
       -moz-box-shadow: 0px 0px 10px #0000D1;
       -webkit-box-shadow: 0px 0px 10px #0000D1;
       box-shadow: 0px 0px 10px #0000D1;
@@ -108,7 +112,7 @@ background-position: center !important;
 .absolute{
    position:absolute;
 }
-.rounded { 
+.rounded {
  border-radius: 20px;
  overflow:hidden;
 }
@@ -161,7 +165,7 @@ background-position: center !important;
   color: inherit !important;
   padding: 0px !important;
   margin: 0.2em 22px 0.2em 0.4em !important;
-  vertical-align: middle !important; 
+  vertical-align: middle !important;
 }
 .input-group a:hover{
   background-color: #FF6F00 !important;

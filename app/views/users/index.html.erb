@@ -10,10 +10,10 @@
                 <div><%= file_field_tag :file, class:"btn btn-warning" %></div>
               </div>
               <div class="col-md-6">
-                <div><%=submit_tag "Importar", class:"btn btn-success",style:"margin:3px;"%> </div> 
+                <div><%=submit_tag "Importar", class:"btn btn-success",style:"margin:3px;"%> </div>
               </div>
             <%end%>
-          </div> 
+          </div>
       </div>
       <div class="col-md-12 center-block no-float">
       <div class="table-responsive">
@@ -42,10 +42,10 @@
             <% if user.may_activar?%>
         <td><%= link_to 'Activar', "/users/#{user.id}/activar", method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-success" %></td>
         <%else%>
-        <td><%= link_to 'Desactivar', "/users/#{user.id}/desactivar", method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-info" %></td>
+        <td><%= link_to 'Desactivar', "/users/#{user.id}/desactivar", method: :put, data: { confirm: 'Estás seguro?' },class:"btn btn-danger" %></td>
         <%end%>
           </td>
-          
+
         </tr>
         <% end %>
       </tbody>

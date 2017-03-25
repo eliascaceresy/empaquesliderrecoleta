@@ -2,7 +2,7 @@
   <div class="row">
     <div class="container well formborder2 animated fadeInDown" id="resplandorblanco">
       <div class="form_title">
-        <h1>Ingresar al Sistema</h1>  
+        <h1>Ingresar al Sistema</h1>
       </div>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name),html: {role: "form"}) do |f| %>
         <div class="input-group input-group-lg">
@@ -23,7 +23,7 @@
             <%= f.label :remember_me,'Recordarme' %>
           </div>
         <% end -%>
-        <div class="center-block"> 
+        <div class="center-block">
           <div class="actions bn-lg">
             <%= f.submit "Iniciar Sesión", class: "btn btn-info boton-border " %>
           </div>
@@ -36,4 +36,3 @@
       </div>
   </div>
 </div>
-

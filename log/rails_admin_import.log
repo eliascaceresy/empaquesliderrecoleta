@@ -1,0 +1,2 @@
+# Logfile created on 2017-03-25 17:00:56 -0300 by logger.rb/54362
+I, [2017-03-25T17:00:56.083577 #27481]  INFO -- : 2017-03-25 17:00:56 -0300: Error during import: Your file must contain a column for the 'Update lookup field' you selected. (/home/elias/.rvm/gems/ruby-2.3.1/gems/rails_admin_import-2.0.0/lib/rails_admin_import/importer.rb:69:in `import_record')

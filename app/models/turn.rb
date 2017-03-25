@@ -5,7 +5,10 @@ class Turn < ActiveRecord::Base
 
 def self.import (file)
   CSV.foreach(file.path, headers: true) do |row|
-  	Turn.create! row.to_hash
+  	@cantidad = row[4]
+		for i in 0..(@cantidad.to_i)-1
+			Turn.create(dia: row[0],numdia: row[1],horainicio: row[2],horatermino: row[3])
+		end
   end
 end
 
@@ -13,7 +16,7 @@ def self.to_csv(options = {})
 	attributes = %w{horainicio horatermino {User.find(turn.user_id).name} user_id}
 	CSV.generate(options) do |csv|
 		csv << ["","","Planilla de Turnos"]
-		
+
 		csv << [""]
 		csv << ["","","Lunes " ,Turn.find_by(dia:'Lunes').numdia]
 		csv << ["Inicio","Término","Nombre Empaque","N°","E","S","Observación"]
@@ -195,7 +198,7 @@ end
 	scope :libres, -> {where(user_id: nil)}
 	scope :tomados, ->{where(state: "take")}
 
-aasm column: "state" do 
+aasm column: "state" do
 	 	state :free, initial: true
 	 	state :take
 

@@ -32,6 +32,7 @@ gem 'devise'
 gem 'mailcatcher'
 gem "animate-rails"
 gem 'rails_admin'
+gem 'rails_admin_import', '~> 2.0'
 gem 'paperclip'
 
 # Use ActiveModel has_secure_password
@@ -66,4 +67,3 @@ end
 
 gem 'puma'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-

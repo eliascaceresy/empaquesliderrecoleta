@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
    before_action :authenticate_user!
   before_action :set_group, only: [:show, :edit, :update, :destroy,:activate,:inactivate]
-before_action :authenticate_administrador!
+  before_action :authenticate_administrador!
   # GET /groups
   # GET /groups.json
   def index
